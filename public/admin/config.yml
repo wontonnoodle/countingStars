@@ -1,0 +1,27 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: public/images
+public_folder: /images
+
+collections:
+  - name: blog
+    label: Blog
+    folder: src/content/blog
+    create: true
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Date, name: date, widget: datetime }
+      - { label: Body, name: body, widget: markdown }
+
+  - name: pages
+    label: Pages
+    files:
+      - label: Home
+        name: home
+        file: src/content/pages/home.md
+        fields:
+          - { label: Headline, name: headline, widget: string }
+          - { label: Subheadline, name: subheadline, widget: string }
+          - { label: Body, name: body, widget: markdown }
