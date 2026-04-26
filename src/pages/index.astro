@@ -1,8 +1,8 @@
 ---
 import Base from "../layouts/Base.astro";
-import { getEntry } from "astro:content";
+import { getEntry, render } from "astro:content";
 const home = await getEntry("pages", "home");
-const { Content } = await home.render();
+const { Content } = await render(home);
 ---
 <Base title="Counting Stars">
   <section style="padding: 4rem 0; text-align: center;">

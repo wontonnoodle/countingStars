@@ -1,8 +1,8 @@
 ---
 import Base from "../layouts/Base.astro";
-import { getEntry } from "astro:content";
+import { getEntry, render } from "astro:content";
 const product = await getEntry("pages", "product");
-const { Content } = await product.render();
+const { Content } = await render(product);
 ---
 <Base title="The Deck — Counting Stars">
   <section style="padding: 4rem 0;">
