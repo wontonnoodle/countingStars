@@ -1,19 +1,23 @@
 ---
+import Base from "../layouts/Base.astro";
+import { getEntry } from "astro:content";
+const home = await getEntry("pages", "home");
+const { Content } = await home.render();
 ---
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Counting Stars</title>
-    <script is:inline src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-  </head>
-  <body>
-    <h1>Counting Stars</h1>
-    <button onclick="window.netlifyIdentity.open()">Log in</button>
-    <script is:inline>
+<Base title="Counting Stars">
+  <section style="padding: 4rem 0; text-align: center;">
+    <h1 style="font-size: 2.5rem; margin-bottom: 0.5rem;">{home.data.headline}</h1>
+    <p style="font-size: 1.25rem; color: #666;">{home.data.subheadline}</p>
+    <a href="/product" style="display: inline-block; margin-top: 2rem; padding: 0.75rem 2rem; background: #222; color: #fff; text-decoration: none;">View the Deck</a>
+  </section>
+  <section style="padding: 2rem 0;">
+    <Content />
+  </section>
+  <script is:inline>
+    if (window.netlifyIdentity) {
       window.netlifyIdentity.on("login", function() {
         document.location.href = "/admin/";
       });
-    </script>
-  </body>
-</html>
+    }
+  </script>
+</Base>

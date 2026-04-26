@@ -1,0 +1,16 @@
+---
+import Base from "../../layouts/Base.astro";
+import { getCollection } from "astro:content";
+const posts = (await getCollection("blog")).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+---
+<Base title="Blog — Counting Stars">
+  <section style="padding: 4rem 0;">
+    <h1 style="font-size: 2rem; margin-bottom: 2rem;">Blog</h1>
+    {posts.map(post => (
+      <article style="margin-bottom: 2rem; padding-bottom: 2rem; border-bottom: 1px solid #eee;">
+        <h2 style="margin-bottom: 0.25rem;"><a href={`/blog/${post.id}`} style="color: #222; text-decoration: none;">{post.data.title}</a></h2>
+        <time style="color: #888; font-size: 0.875rem;">{post.data.date.toLocaleDateString()}</time>
+      </article>
+    ))}
+  </section>
+</Base>

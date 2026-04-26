@@ -25,3 +25,18 @@ collections:
           - { label: Headline, name: headline, widget: string }
           - { label: Subheadline, name: subheadline, widget: string }
           - { label: Body, name: body, widget: markdown }
+      - label: Product
+        name: product
+        file: src/content/pages/product.md
+        fields:
+          - { label: Headline, name: headline, widget: string }
+          - { label: Subheadline, name: subheadline, widget: string }
+          - { label: Details, name: body_text, widget: string }
+          - { label: Body, name: body, widget: markdown }
+      - label: About
+        name: about
+        file: src/content/pages/about.md
+        fields:
+          - { label: Headline, name: headline, widget: string }
+          - { label: Subheadline, name: subheadline, widget: string }
+          - { label: Body, name: body, widget: markdown }

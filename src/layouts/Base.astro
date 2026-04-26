@@ -1,0 +1,36 @@
+---
+const { title = "Counting Stars" } = Astro.props;
+---
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <script is:inline src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body { font-family: system-ui, sans-serif; color: #222; line-height: 1.6; max-width: 960px; margin: 0 auto; padding: 0 1.5rem; }
+      nav { display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 0; border-bottom: 1px solid #eee; }
+      nav a { color: #222; text-decoration: none; margin-left: 1.5rem; }
+      nav a:hover { text-decoration: underline; }
+      .site-name { font-weight: 700; font-size: 1.2rem; }
+      footer { border-top: 1px solid #eee; padding: 2rem 0; margin-top: 4rem; color: #888; font-size: 0.875rem; }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <a href="/" class="site-name">Counting Stars</a>
+      <div>
+        <a href="/product">Product</a>
+        <a href="/blog">Blog</a>
+        <a href="/about">About</a>
+      </div>
+    </nav>
+    <main>
+      <slot />
+    </main>
+    <footer>
+      <p>&copy; 2026 Counting Stars</p>
+    </footer>
+  </body>
+</html>
