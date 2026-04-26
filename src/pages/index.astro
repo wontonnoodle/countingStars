@@ -5,12 +5,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Counting Stars</title>
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <script is:inline src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   </head>
   <body>
     <h1>Counting Stars</h1>
     <button onclick="window.netlifyIdentity.open()">Log in</button>
-    <script>
+    <script is:inline>
       window.netlifyIdentity.on("login", function() {
         document.location.href = "/admin/";
       });
