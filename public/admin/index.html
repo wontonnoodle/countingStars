@@ -8,5 +8,73 @@
 </head>
 <body>
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+  <script>
+    CMS.registerPreviewStyle(`
+      body { font-family: system-ui, sans-serif; color: #222; line-height: 1.6; max-width: 960px; margin: 0 auto; padding: 0 1.5rem; }
+      h1 { font-size: 2rem; margin-bottom: 0.5rem; }
+      .subheadline { font-size: 1.1rem; color: #666; margin-bottom: 2rem; }
+      .hero { padding: 4rem 0; text-align: center; }
+      .hero h1 { font-size: 2.5rem; }
+      .hero .subheadline { font-size: 1.25rem; }
+      .btn { display: inline-block; margin-top: 2rem; padding: 0.75rem 2rem; background: #222; color: #fff; text-decoration: none; }
+      .product-image { background: #f5f5f5; height: 300px; display: flex; align-items: center; justify-content: center; color: #aaa; margin-bottom: 2rem; }
+      time { color: #888; font-size: 0.875rem; }
+    `, { raw: true });
+
+    var HomePreview = createClass({
+      render: function() {
+        var entry = this.props.entry;
+        return h('div', {},
+          h('section', { className: 'hero' },
+            h('h1', {}, entry.getIn(['data', 'headline'])),
+            h('p', { className: 'subheadline' }, entry.getIn(['data', 'subheadline'])),
+            h('span', { className: 'btn' }, 'View the Deck')
+          ),
+          h('section', {}, this.props.widgetFor('body'))
+        );
+      }
+    });
+
+    var ProductPreview = createClass({
+      render: function() {
+        var entry = this.props.entry;
+        return h('div', {},
+          h('h1', {}, entry.getIn(['data', 'headline'])),
+          h('p', { className: 'subheadline' }, entry.getIn(['data', 'subheadline'])),
+          h('div', { className: 'product-image' }, '[ Product image placeholder ]'),
+          h('p', {}, entry.getIn(['data', 'body_text'])),
+          this.props.widgetFor('body'),
+          h('span', { className: 'btn' }, 'Buy Now (placeholder)')
+        );
+      }
+    });
+
+    var AboutPreview = createClass({
+      render: function() {
+        var entry = this.props.entry;
+        return h('div', {},
+          h('h1', {}, entry.getIn(['data', 'headline'])),
+          h('p', { className: 'subheadline' }, entry.getIn(['data', 'subheadline'])),
+          this.props.widgetFor('body')
+        );
+      }
+    });
+
+    var BlogPreview = createClass({
+      render: function() {
+        var entry = this.props.entry;
+        return h('article', {},
+          h('h1', {}, entry.getIn(['data', 'title'])),
+          h('time', {}, entry.getIn(['data', 'date'])),
+          this.props.widgetFor('body')
+        );
+      }
+    });
+
+    CMS.registerPreviewTemplate('home', HomePreview);
+    CMS.registerPreviewTemplate('product', ProductPreview);
+    CMS.registerPreviewTemplate('about', AboutPreview);
+    CMS.registerPreviewTemplate('blog', BlogPreview);
+  </script>
 </body>
 </html>
