@@ -10,15 +10,18 @@
   <body>
     <h1>Counting Stars</h1>
     <script>
-      if (window.netlifyIdentity) {
-        window.netlifyIdentity.on("init", user => {
-          if (!user) {
-            window.netlifyIdentity.on("login", () => {
-              document.location.href = "/admin/";
-            });
+      window.addEventListener('load', function() {
+        if (window.netlifyIdentity) {
+          window.netlifyIdentity.init();
+          const hash = window.location.hash;
+          if (hash.includes('invite_token') || hash.includes('recovery_token')) {
+            window.netlifyIdentity.open();
           }
-        });
-      }
+          window.netlifyIdentity.on("login", function() {
+            document.location.href = "/admin/";
+          });
+        }
+      });
     </script>
   </body>
 </html>
