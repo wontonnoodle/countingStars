@@ -9,18 +9,10 @@
   </head>
   <body>
     <h1>Counting Stars</h1>
+    <button onclick="window.netlifyIdentity.open()">Log in</button>
     <script>
-      window.addEventListener('load', function() {
-        if (window.netlifyIdentity) {
-          window.netlifyIdentity.init();
-          const hash = window.location.hash;
-          if (hash.includes('invite_token') || hash.includes('recovery_token')) {
-            window.netlifyIdentity.open();
-          }
-          window.netlifyIdentity.on("login", function() {
-            document.location.href = "/admin/";
-          });
-        }
+      window.netlifyIdentity.on("login", function() {
+        document.location.href = "/admin/";
       });
     </script>
   </body>
