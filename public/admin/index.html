@@ -5,8 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Content Manager</title>
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <style>
+    .view-site-bar { background: #222; padding: 0.5rem 1.5rem; text-align: right; }
+    .view-site-bar a { color: #fff; text-decoration: none; font-family: system-ui, sans-serif; font-size: 0.875rem; }
+    .view-site-bar a:hover { text-decoration: underline; }
+  </style>
 </head>
 <body>
+  <div class="view-site-bar">
+    <a href="/" target="_blank">← View Site</a>
+  </div>
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
   <script>
     CMS.registerPreviewStyle(`
