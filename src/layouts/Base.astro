@@ -6,7 +6,7 @@ const { title = "Counting Stars" } = Astro.props;
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
-    <style>
+    <style is:global>
       * { margin: 0; padding: 0; box-sizing: border-box; }
       body { font-family: system-ui, sans-serif; color: #222; line-height: 1.6; max-width: 960px; margin: 0 auto; padding: 0 clamp(1.5rem, 5vw, 3rem); }
       nav { display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 0; border-bottom: 1px solid #eee; }
