@@ -4,7 +4,7 @@ import { getEntry, render } from "astro:content";
 const about = await getEntry("pages", "about");
 const { Content } = await render(about);
 ---
-<Base title="About — Counting Stars">
+<Base title="Our story — Counting Stars">
   <section style="padding: 4rem 0;">
     <h1 style="font-size: 2rem; margin-bottom: 0.5rem;">{about.data.headline}</h1>
     <p style="font-size: 1.1rem; color: #666; margin-bottom: 2rem;">{about.data.subheadline}</p>
