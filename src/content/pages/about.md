@@ -1,6 +1,13 @@
 ---
-headline: "About Counting Stars"
-subheadline: "How this started."
+headline: Our story
+subheadline: Counting stars
 ---
+## The team
 
-Your story goes here. Edit in Decap.
+**James Wigmore** - Story & design lead
+
+The artists - Characters & settings
+
+Our expert advisors
+
+Our play testers
