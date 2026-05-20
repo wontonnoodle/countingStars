@@ -1,6 +1,5 @@
 ---
-title: "Welcome to the Blog"
-date: 2026-04-26
+title: First steps...
+date: 2026-05-19T20:17:00.000-07:00
 ---
-
-This is your first blog post. Write about anything — the product, the process, or what's on your mind.
+These are the first steps. And the place to find everything. To remember where to look. And then read. And then take direction. Oh yes, the next step is....
