@@ -6,8 +6,6 @@ subheadline: Counting stars
 
 To create a playful story-based learning environment that supports students & their caregivers.
 
-
-
 ## The team
 
 **James Wigmore** - Story & design lead
